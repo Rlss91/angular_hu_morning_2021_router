@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-query-params',
@@ -10,7 +10,7 @@ export class QueryParamsComponent implements OnInit {
   name: string;
   id: number;
   namesArr: string[];
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.name = '';
     this.id = NaN;
     this.namesArr = ['kenny', 'john', 'bob', 'sami', 'daniel'];
@@ -22,5 +22,9 @@ export class QueryParamsComponent implements OnInit {
       this.name = qparams['name'];
       this.id = qparams['id'];
     });
+  }
+
+  handleBtnClick(): void {
+    this.router.navigate(['/pets']);
   }
 }
