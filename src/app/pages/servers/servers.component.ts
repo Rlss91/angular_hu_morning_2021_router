@@ -14,4 +14,6 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  handleServerClick(chosenServerCode: number): void {}
 }
