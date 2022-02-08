@@ -7,6 +7,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { QueryParamsComponent } from './pages/query-params/query-params.component';
+import { ServersComponent } from './pages/servers/servers.component';
+import { ServerInfoComponent } from './pages/server-info/server-info.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { QueryParamsComponent } from './pages/query-params/query-params.componen
     HomePageComponent,
     PetsComponent,
     NavbarComponent,
-    QueryParamsComponent
+    QueryParamsComponent,
+    ServersComponent,
+    ServerInfoComponent
   ],
   imports: [
     BrowserModule,
