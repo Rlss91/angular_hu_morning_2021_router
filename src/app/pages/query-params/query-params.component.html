@@ -1,0 +1,12 @@
+<p>query-params works!</p>
+<h1>{{ name }}</h1>
+<h2>{{ id }}</h2>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let nameItem of namesArr"
+    [ngClass]="{ active: nameItem === name }"
+  >
+    {{ nameItem }}
+  </li>
+</ul>
