@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## home work
+
+1. create component to display server details from server info
+   (child component)
+   (server-info -> child component)
+2. create button to change the status of the selected server
+   (server-info <- child component)
+3. when server status is
+   3.1 true:
+   then in servers route the server button must be green
+   3.2 false:
+   then server button must be red
+   (subject)
