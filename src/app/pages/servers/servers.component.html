@@ -1,13 +1,24 @@
 <p>Servers</p>
-<div class="list-group">
-  <!-- <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-    The current button
-  </button> -->
-  <button
-    type="button"
-    class="list-group-item list-group-item-action"
-    *ngFor="let serverItem of serverArr"
-  >
-    {{ serverItem.name }}
-  </button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <div class="list-group">
+        <!-- <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+          The current button
+        </button> -->
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          *ngFor="let serverItem of serverArr"
+          (click)="handleServerClick(serverItem.code)"
+        >
+          {{ serverItem.name }}
+        </button>
+      </div>
+    </div>
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
