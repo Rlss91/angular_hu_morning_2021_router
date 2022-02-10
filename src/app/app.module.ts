@@ -10,6 +10,7 @@ import { QueryParamsComponent } from './pages/query-params/query-params.componen
 import { ServersComponent } from './pages/servers/servers.component';
 import { ServerInfoComponent } from './pages/server-info/server-info.component';
 import { ServerCardComponent } from './components/server-card/server-card.component';
+import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-t.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ServerCardComponent } from './components/server-card/server-card.compon
     QueryParamsComponent,
     ServersComponent,
     ServerInfoComponent,
-    ServerCardComponent
+    ServerCardComponent,
+    PageNotFoundTComponent
   ],
   imports: [
     BrowserModule,
