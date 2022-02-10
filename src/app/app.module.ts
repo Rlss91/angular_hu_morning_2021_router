@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { QueryParamsComponent } from './pages/query-params/query-params.component';
 import { ServersComponent } from './pages/servers/servers.component';
 import { ServerInfoComponent } from './pages/server-info/server-info.component';
+import { ServerCardComponent } from './components/server-card/server-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServerInfoComponent } from './pages/server-info/server-info.component';
     NavbarComponent,
     QueryParamsComponent,
     ServersComponent,
-    ServerInfoComponent
+    ServerInfoComponent,
+    ServerCardComponent
   ],
   imports: [
     BrowserModule,

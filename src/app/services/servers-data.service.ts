@@ -35,10 +35,16 @@ export class ServersDataService {
     ];
   }
 
-  updateServerStatus(serverId: number, status: boolean): void {
-    if (serverId < 0 || serverId > this.serversArr.length - 1) {
+  updateServerStatus(serverCode: number, status: boolean): void {
+    if (serverCode < 0 || serverCode > this.serversArr.length - 1) {
       return;
     }
-    this.serversArr[serverId].status = status;
+    let selectedServer = this.serversArr.find(
+      (item) => item.code == serverCode
+    );
+    if (selectedServer) {
+      selectedServer.status = status;
+    }
+    // this.serversArr[serverId].status = status;
   }
 }

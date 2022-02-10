@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">{{ serverData.name }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ serverData.status }}</h5>
+    <p class="card-text">
+      {{ serverData.desc }}
+    </p>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="handleServerStatusChange(true)"
+    >
+      Turn on
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="handleServerStatusChange(false)"
+    >
+      Turn off
+    </button>
+  </div>
+</div>
