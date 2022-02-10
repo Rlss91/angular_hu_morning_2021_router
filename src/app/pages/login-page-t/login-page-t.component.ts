@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthTService } from 'src/app/services/auth-t.service';
 
@@ -8,6 +9,8 @@ import { AuthTService } from 'src/app/services/auth-t.service';
   styleUrls: ['./login-page-t.component.css'],
 })
 export class LoginPageTComponent implements OnInit {
+  @ViewChild('fT', { static: false }) loginFormT: NgForm;
+
   constructor(private authTService: AuthTService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -17,4 +20,6 @@ export class LoginPageTComponent implements OnInit {
     //navigate to dashboard
     this.router.navigate(['pets']);
   }
+
+  handleSubmitT(): void {}
 }
