@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import ServerData from 'src/app/model/ServerData.model';
 import { ServersDataService } from 'src/app/services/servers-data.service';
 
@@ -10,6 +11,7 @@ import { ServersDataService } from 'src/app/services/servers-data.service';
 })
 export class ServersComponent implements OnInit {
   serverArr: ServerData[];
+  serverChangeSub: Subscription;
   constructor(
     private serversDataService: ServersDataService,
     private route: ActivatedRoute,
@@ -18,7 +20,13 @@ export class ServersComponent implements OnInit {
     this.serverArr = this.serversDataService.serversArr;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.serverChangeSub = this.serversDataService.serversDataChanged.subscribe(
+      (serverArr: ServerData[]) => {
+        this.serverArr = serverArr;
+      }
+    );
+  }
 
   handleServerClick(chosenServerCode: number): void {
     this.router.navigate(['serverinfo'], {

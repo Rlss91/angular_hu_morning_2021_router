@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import ServerData from '../model/ServerData.model';
 
 @Injectable({
@@ -6,7 +7,9 @@ import ServerData from '../model/ServerData.model';
 })
 export class ServersDataService {
   serversArr: ServerData[];
+  serversDataChanged: Subject<ServerData[]>;
   constructor() {
+    this.serversDataChanged = new Subject<ServerData[]>();
     this.serversArr = [
       {
         name: 'amazon server 1',
@@ -36,15 +39,12 @@ export class ServersDataService {
   }
 
   updateServerStatus(serverCode: number, status: boolean): void {
-    if (serverCode < 0 || serverCode > this.serversArr.length - 1) {
-      return;
-    }
     let selectedServer = this.serversArr.find(
       (item) => item.code == serverCode
     );
     if (selectedServer) {
       selectedServer.status = status;
+      this.serversDataChanged.next(this.serversArr);
     }
-    // this.serversArr[serverId].status = status;
   }
 }

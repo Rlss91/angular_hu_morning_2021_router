@@ -12,6 +12,7 @@
           class="list-group-item list-group-item-action"
           *ngFor="let serverItem of serverArr"
           (click)="handleServerClick(serverItem.code)"
+          [ngClass]="{ active: serverItem.status }"
         >
           {{ serverItem.name }}
         </button>
