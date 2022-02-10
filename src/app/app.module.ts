@@ -11,6 +11,8 @@ import { ServersComponent } from './pages/servers/servers.component';
 import { ServerInfoComponent } from './pages/server-info/server-info.component';
 import { ServerCardComponent } from './components/server-card/server-card.component';
 import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-t.component';
+import { NavbarTComponent } from './components/navbar-t/navbar-t.component';
+import { LoginPageTComponent } from './pages/login-page-t/login-page-t.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-
     ServersComponent,
     ServerInfoComponent,
     ServerCardComponent,
-    PageNotFoundTComponent
+    PageNotFoundTComponent,
+    NavbarTComponent,
+    LoginPageTComponent
   ],
   imports: [
     BrowserModule,
