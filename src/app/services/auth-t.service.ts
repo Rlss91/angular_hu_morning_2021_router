@@ -20,39 +20,43 @@ export class AuthTService {
   }
 
   loginT(emailT: string, passwordT: string): Observable<any> {
-    return this.http.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`,
-      {
-        email: emailT,
-        password: passwordT,
-        returnSecureToken: true,
-      }
-    );
-    // .pipe(
-    //   tap((dataT: any) => {
-    //     // console.log('data from tap', dataT);
-    //     this.tokenDataT = dataT;
-    //   })
-    // );
+    return this.http
+      .post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`,
+        {
+          email: emailT,
+          password: passwordT,
+          returnSecureToken: true,
+        }
+      )
+      .pipe(
+        tap((dataT: any) => {
+          // console.log('data from tap', dataT);
+          this.tokenDataT = dataT;
+          this.isLoggedInT = true;
+        })
+      );
     // this.isLoggedInT = true;
     // return true;
   }
 
   signupT(emailT: string, passwordT: string): Observable<any> {
-    return this.http.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
-      {
-        email: emailT,
-        password: passwordT,
-        returnSecureToken: true,
-      }
-    );
-    // .pipe(
-    //   tap((dataT: any) => {
-    //     // console.log('data from tap', dataT);
-    //     this.tokenDataT = dataT;
-    //   })
-    // );
+    return this.http
+      .post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
+        {
+          email: emailT,
+          password: passwordT,
+          returnSecureToken: true,
+        }
+      )
+      .pipe(
+        tap((dataT: any) => {
+          // console.log('data from tap', dataT);
+          this.tokenDataT = dataT;
+          this.isLoggedInT = true;
+        })
+      );
     // this.isLoggedInT = true;
     // return true;
   }
