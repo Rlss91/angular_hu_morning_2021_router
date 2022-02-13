@@ -33,7 +33,7 @@ export class SignupPageTComponent implements OnInit {
       //   this.loginFormT.reset();
       // }
       this.authTService
-        .loginT(this.loginFormT.value.email, this.loginFormT.value.password)
+        .signupT(this.loginFormT.value.email, this.loginFormT.value.password)
         .subscribe((data: any) => {
           console.log('data from ob', data);
         });

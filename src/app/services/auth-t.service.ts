@@ -21,7 +21,7 @@ export class AuthTService {
 
   loginT(emailT: string, passwordT: string): Observable<any> {
     return this.http.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`,
       {
         email: emailT,
         password: passwordT,
