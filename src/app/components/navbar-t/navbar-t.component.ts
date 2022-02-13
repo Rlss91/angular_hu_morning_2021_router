@@ -9,7 +9,7 @@ export class NavbarTComponent implements OnInit {
   linksArrT: string[];
 
   constructor() {
-    this.linksArrT = ['home', 'pets', 'servers', 'login'];
+    this.linksArrT = ['home', 'pets', 'servers', 'login', 'signup'];
   }
 
   ngOnInit(): void {}

@@ -9,6 +9,7 @@ import { PetsComponent } from './pages/pets/pets.component';
 import { QueryParamsComponent } from './pages/query-params/query-params.component';
 import { ServerInfoComponent } from './pages/server-info/server-info.component';
 import { ServersComponent } from './pages/servers/servers.component';
+import { SignupPageTComponent } from './pages/signup-page-t/signup-page-t.component';
 import { AuthTGuard } from './services/auth-t.guard';
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageTComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupPageTComponent,
   },
   {
     path: 'http',
