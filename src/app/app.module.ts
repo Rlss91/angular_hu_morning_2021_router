@@ -14,6 +14,7 @@ import { ServerCardComponent } from './components/server-card/server-card.compon
 import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-t.component';
 import { NavbarTComponent } from './components/navbar-t/navbar-t.component';
 import { LoginPageTComponent } from './pages/login-page-t/login-page-t.component';
+import { ParamsExampleTComponent } from './pages/params-example-t/params-example-t.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginPageTComponent } from './pages/login-page-t/login-page-t.component
     PageNotFoundTComponent,
     NavbarTComponent,
     LoginPageTComponent,
+    ParamsExampleTComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

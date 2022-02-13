@@ -21,5 +21,19 @@ export class LoginPageTComponent implements OnInit {
     this.router.navigate(['pets']);
   }
 
-  handleSubmitT(): void {}
+  handleSubmitT(): void {
+    if (this.loginFormT.form.status == 'VALID') {
+      if (
+        this.authTService.loginT(
+          this.loginFormT.value.email,
+          this.loginFormT.value.password
+        )
+      ) {
+        this.router.navigate(['dashboard', '123']);
+        this.loginFormT.reset();
+      }
+    }
+    // console.log(this.loginFormT.form);
+    // console.log(this.loginFormT.value);
+  }
 }

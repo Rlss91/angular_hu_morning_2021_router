@@ -31,5 +31,7 @@
   <!-- <button type="submit" class="btn btn-primary" (click)="handleLoginClick()">
     Submit
   </button> -->
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!fT.valid">
+    Submit
+  </button>
 </form>
