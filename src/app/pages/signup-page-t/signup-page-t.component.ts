@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AuthTService } from 'src/app/services/auth-t.service';
 
 @Component({
-  selector: 'app-login-page-t',
-  templateUrl: './login-page-t.component.html',
-  styleUrls: ['./login-page-t.component.css'],
+  selector: 'app-signup-page-t',
+  templateUrl: './signup-page-t.component.html',
+  styleUrls: ['./signup-page-t.component.css'],
 })
-export class LoginPageTComponent implements OnInit {
+export class SignupPageTComponent implements OnInit {
   @ViewChild('fT', { static: false }) loginFormT: NgForm;
 
   constructor(private authTService: AuthTService, private router: Router) {}

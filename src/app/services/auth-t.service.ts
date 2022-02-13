@@ -1,11 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthTService {
   isLoggedInT: boolean;
-  constructor() {
+  tokenDataT: any;
+  constructor(private http: HttpClient) {
     this.isLoggedInT = false;
   }
 
@@ -13,8 +19,41 @@ export class AuthTService {
     return this.isLoggedInT;
   }
 
-  loginT(emailT: string, passwordT: string): boolean {
-    this.isLoggedInT = true;
-    return true;
+  loginT(emailT: string, passwordT: string): Observable<any> {
+    return this.http.post(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
+      {
+        email: emailT,
+        password: passwordT,
+        returnSecureToken: true,
+      }
+    );
+    // .pipe(
+    //   tap((dataT: any) => {
+    //     // console.log('data from tap', dataT);
+    //     this.tokenDataT = dataT;
+    //   })
+    // );
+    // this.isLoggedInT = true;
+    // return true;
+  }
+
+  signupT(emailT: string, passwordT: string): Observable<any> {
+    return this.http.post(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
+      {
+        email: emailT,
+        password: passwordT,
+        returnSecureToken: true,
+      }
+    );
+    // .pipe(
+    //   tap((dataT: any) => {
+    //     // console.log('data from tap', dataT);
+    //     this.tokenDataT = dataT;
+    //   })
+    // );
+    // this.isLoggedInT = true;
+    // return true;
   }
 }

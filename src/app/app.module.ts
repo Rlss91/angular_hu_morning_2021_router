@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-
 import { NavbarTComponent } from './components/navbar-t/navbar-t.component';
 import { LoginPageTComponent } from './pages/login-page-t/login-page-t.component';
 import { ParamsExampleTComponent } from './pages/params-example-t/params-example-t.component';
+import { HttpExampleComponent } from './pages/http-example/http-example.component';
+import { SignupPageTComponent } from './pages/signup-page-t/signup-page-t.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,10 @@ import { ParamsExampleTComponent } from './pages/params-example-t/params-example
     NavbarTComponent,
     LoginPageTComponent,
     ParamsExampleTComponent,
+    HttpExampleComponent,
+    SignupPageTComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

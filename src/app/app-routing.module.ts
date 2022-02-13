@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HttpExampleComponent } from './pages/http-example/http-example.component';
 import { LoginPageTComponent } from './pages/login-page-t/login-page-t.component';
 import { PageNotFoundTComponent } from './pages/page-not-found-t/page-not-found-t.component';
 import { ParamsExampleTComponent } from './pages/params-example-t/params-example-t.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageTComponent,
+  },
+  {
+    path: 'http',
+    component: HttpExampleComponent,
   },
   {
     //!localhost:4200/dashboard <-- this is not the route
